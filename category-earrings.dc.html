@@ -39,7 +39,7 @@ body{background:var(--color-greige)}
       <button type="button" aria-label="Open menu" onClick="{{ toggleMenu }}" style="width:44px;height:44px;margin-left:-12px;display:flex;align-items:center;justify-content:center;background:none;border:0;color:var(--color-ink);cursor:pointer;padding:0">
         <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="{{ menuIcon }}" size="20px" hint-size="20px,20px"></x-import>
       </button>
-      <a href="Aurette Homepage.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:21px;letter-spacing:0.26em;text-indent:0.26em;color:var(--color-ink);text-transform:uppercase">Aurette</a>
+      <a href="index.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:21px;letter-spacing:0.26em;text-indent:0.26em;color:var(--color-ink);text-transform:uppercase">Aurette</a>
       <button type="button" aria-label="Bag" style="width:44px;height:44px;margin-right:-12px;justify-self:end;display:flex;align-items:center;justify-content:center;background:none;border:0;color:var(--color-ink);cursor:pointer;padding:0">
         <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="shopping-bag" size="20px" hint-size="20px,20px"></x-import>
       </button>
@@ -57,7 +57,7 @@ body{background:var(--color-greige)}
             <a href="#top" style="min-height:48px;display:flex;align-items:center;padding:0 var(--space-4);font:var(--type-body);color:var(--text-secondary)">Necklaces</a>
           </div>
         </sc-if>
-        <a href="Aurette About.dc.html" style="min-height:52px;display:flex;align-items:center;border-bottom:1px solid var(--border-subtle);font:var(--type-nav);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
+        <a href="about.dc.html" style="min-height:52px;display:flex;align-items:center;border-bottom:1px solid var(--border-subtle);font:var(--type-nav);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
         <a href="#footer" style="min-height:52px;display:flex;align-items:center;font:var(--type-nav);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase">Care guide</a>
       </nav>
     </sc-if>
@@ -65,7 +65,7 @@ body{background:var(--color-greige)}
 
   <section id="top" data-screen-label="Category header" style="padding:var(--space-8) var(--gutter-mobile) var(--space-6);display:flex;flex-direction:column;gap:var(--space-3)">
     <nav style="display:flex;align-items:center;gap:var(--space-2);font:var(--type-label);font-size:10px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary)">
-      <a href="Aurette Homepage.dc.html" style="color:var(--text-secondary)">Home</a>
+      <a href="index.dc.html" style="color:var(--text-secondary)">Home</a>
       <span>/</span>
       <span style="color:var(--color-ink)">Earrings</span>
     </nav>
@@ -111,10 +111,10 @@ body{background:var(--color-greige)}
       <sc-for list="{{ items }}" as="item" hint-placeholder-count="6">
         <div>
           <sc-if value="{{ item.hasPhoto }}" hint-placeholder-val="{{ true }}">
-            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="{{ item.name }}" price="{{ item.price }}" image="{{ item.image }}" badge="{{ item.badge }}" href="Aurette Product Page.dc.html" hint-size="100%,260px"></x-import>
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="{{ item.name }}" price="{{ item.price }}" image="{{ item.image }}" badge="{{ item.badge }}" href="product.dc.html" hint-size="100%,260px"></x-import>
           </sc-if>
           <sc-if value="{{ item.noPhoto }}" hint-placeholder-val="{{ false }}">
-            <a href="Aurette Product Page.dc.html" class="au-product">
+            <a href="product.dc.html" class="au-product">
               <span style="display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:var(--surface-image-pad);border:1px dashed var(--border-subtle);padding:var(--space-4);font:var(--type-label);font-size:9px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary);text-align:center">Photography to come — placeholder</span>
               <span class="au-product__info">
                 <span class="au-product__name">{{ item.name }}</span>

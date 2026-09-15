@@ -39,15 +39,15 @@ body{background:var(--color-greige)}
       <button type="button" aria-label="Open menu" onClick="{{ toggleMenu }}" style="width:44px;height:44px;margin-left:-12px;display:flex;align-items:center;justify-content:center;background:none;border:0;color:var(--color-ink);cursor:pointer;padding:0">
         <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="{{ menuIcon }}" size="20px" hint-size="20px,20px"></x-import>
       </button>
-      <a href="Aurette Homepage.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:21px;letter-spacing:0.26em;text-indent:0.26em;color:var(--color-ink);text-transform:uppercase">Aurette</a>
+      <a href="index.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:21px;letter-spacing:0.26em;text-indent:0.26em;color:var(--color-ink);text-transform:uppercase">Aurette</a>
       <button type="button" aria-label="Bag" style="width:44px;height:44px;margin-right:-12px;justify-self:end;display:flex;align-items:center;justify-content:center;background:none;border:0;color:var(--color-ink);cursor:pointer;padding:0">
         <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="shopping-bag" size="20px" hint-size="20px,20px"></x-import>
       </button>
     </header>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <nav style="position:absolute;left:0;right:0;top:100%;background:var(--surface-page);border-bottom:1px solid var(--border-subtle);padding:var(--space-2) var(--gutter-mobile) var(--space-6);display:flex;flex-direction:column">
-        <a href="Aurette Category Earrings.dc.html" style="min-height:52px;display:flex;align-items:center;border-bottom:1px solid var(--border-subtle);font:var(--type-nav);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase">Shop</a>
-        <a href="Aurette About.dc.html" style="min-height:52px;display:flex;align-items:center;border-bottom:1px solid var(--border-subtle);font:var(--type-nav);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
+        <a href="category-earrings.dc.html" style="min-height:52px;display:flex;align-items:center;border-bottom:1px solid var(--border-subtle);font:var(--type-nav);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase">Shop</a>
+        <a href="about.dc.html" style="min-height:52px;display:flex;align-items:center;border-bottom:1px solid var(--border-subtle);font:var(--type-nav);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
         <a href="#care" style="min-height:52px;display:flex;align-items:center;font:var(--type-nav);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase">Care guide</a>
       </nav>
     </sc-if>

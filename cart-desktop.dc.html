@@ -37,11 +37,11 @@
             Shop
             <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="chevron-down" size="14px" hint-size="14px,14px"></x-import>
           </button>
-          <a href="Aurette Category Earrings Desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Collections</a>
-          <a href="Aurette About Desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
+          <a href="category-earrings-desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Collections</a>
+          <a href="about-desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
           <a href="#footer" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Care</a>
         </nav>
-        <a href="Aurette Homepage Desktop.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:24px;letter-spacing:0.3em;text-indent:0.3em;text-transform:uppercase;color:var(--color-ink)">Aurette</a>
+        <a href="index-desktop.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:24px;letter-spacing:0.3em;text-indent:0.3em;text-transform:uppercase;color:var(--color-ink)">Aurette</a>
         <div style="justify-self:end;display:flex;align-items:center;gap:var(--space-6)">
           <a href="#" aria-label="Search" style="display:flex;color:var(--color-ink)">
             <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="search" size="18px" hint-size="18px,18px"></x-import>
@@ -57,10 +57,10 @@
       <sc-if value="{{ shopOpen }}" hint-placeholder-val="{{ false }}">
         <div style="position:absolute;left:0;right:0;background:var(--surface-page);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-overlay)">
           <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-8) var(--gutter-desktop);display:flex;gap:var(--space-16)">
-            <a href="Aurette Category Earrings Desktop.dc.html" style="font:var(--type-body);color:var(--text-secondary)">Earrings</a>
+            <a href="category-earrings-desktop.dc.html" style="font:var(--type-body);color:var(--text-secondary)">Earrings</a>
             <a href="#" style="font:var(--type-body);color:var(--text-secondary)">Bangles</a>
             <a href="#" style="font:var(--type-body);color:var(--text-secondary)">Necklaces</a>
-            <a href="Aurette Category Earrings Desktop.dc.html#grid" style="font:var(--type-body);color:var(--text-secondary)">New in</a>
+            <a href="category-earrings-desktop.dc.html#grid" style="font:var(--type-body);color:var(--text-secondary)">New in</a>
           </div>
         </div>
       </sc-if>
@@ -77,8 +77,8 @@
       <p style="font-family:var(--font-display);font-size:30px;line-height:1.25;color:var(--text-primary);margin:0;max-width:22ch">Nothing in your bag yet — have a look at what's new.</p>
       <p style="font:var(--type-body);color:var(--text-secondary);margin:0;max-width:44ch">Seven pieces, all tested in saltwater. Start with the hoops.</p>
       <div style="display:flex;align-items:center;gap:var(--space-8);margin-top:var(--space-2)">
-        <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Button" variant="primary" size="lg" href="Aurette Category Earrings Desktop.dc.html" hint-size="160px,48px">Shop earrings</x-import>
-        <a href="Aurette Homepage Desktop.dc.html" style="flex:0 0 auto;white-space:nowrap;font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;border-bottom:1px solid var(--color-ink);padding-bottom:3px">Back to home</a>
+        <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Button" variant="primary" size="lg" href="category-earrings-desktop.dc.html" hint-size="160px,48px">Shop earrings</x-import>
+        <a href="index-desktop.dc.html" style="flex:0 0 auto;white-space:nowrap;font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;border-bottom:1px solid var(--color-ink);padding-bottom:3px">Back to home</a>
       </div>
     </section>
   </sc-if>
@@ -89,7 +89,7 @@
       <div style="border-top:1px solid var(--border-subtle)">
         <sc-for list="{{ lines }}" as="line" hint-placeholder-count="2">
           <div style="display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:var(--space-6);padding:var(--space-6) 0;border-bottom:1px solid var(--border-subtle);align-items:start">
-            <a href="Aurette Product Page Desktop.dc.html" style="display:block;align-self:start;background:var(--surface-image-pad)">
+            <a href="product-desktop.dc.html" style="display:block;align-self:start;background:var(--surface-image-pad)">
               <sc-if value="{{ line.hasImage }}" hint-placeholder-val="{{ false }}">
               <img src="{{ line.image }}" alt="{{ line.name }}" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block">
             </sc-if>
@@ -98,7 +98,7 @@
             </sc-if>
             </a>
             <div style="display:flex;flex-direction:column;gap:var(--space-3);min-width:0">
-              <a href="Aurette Product Page Desktop.dc.html" style="font:var(--type-body);color:var(--text-primary)">{{ line.name }}</a>
+              <a href="product-desktop.dc.html" style="font:var(--type-body);color:var(--text-primary)">{{ line.name }}</a>
               <span style="font:var(--type-body-sm);color:var(--text-secondary)">{{ line.options }}</span>
               <span style="font:var(--type-body-sm);color:var(--text-secondary)">{{ line.unit }} each</span>
               <div style="display:flex;align-items:center;gap:var(--space-6);margin-top:var(--space-2)">
@@ -109,7 +109,7 @@
             <span style="font:var(--type-body);color:var(--text-primary);white-space:nowrap;text-align:right">{{ line.lineTotal }}</span>
           </div>
         </sc-for>
-        <a href="Aurette Category Earrings Desktop.dc.html" style="display:inline-block;margin-top:var(--space-8);white-space:nowrap;font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;border-bottom:1px solid var(--color-ink);padding-bottom:3px">Keep shopping</a>
+        <a href="category-earrings-desktop.dc.html" style="display:inline-block;margin-top:var(--space-8);white-space:nowrap;font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;border-bottom:1px solid var(--color-ink);padding-bottom:3px">Keep shopping</a>
       </div>
 
       <aside style="position:sticky;top:132px;background:var(--surface-band);padding:var(--space-8);display:flex;flex-direction:column;gap:var(--space-4)">
@@ -135,9 +135,9 @@
         <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-12) var(--gutter-desktop) var(--section-y)">
           <span style="display:block;font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary);margin-bottom:var(--space-8)">Goes with this</span>
           <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4);max-width:900px">
-            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="The Oval Pendant" price="$149 AUD" image="assets/img/product-oval-pendant.jpg" href="Aurette Product Page Desktop.dc.html" hint-size="100%,300px"></x-import>
-            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="The Link Bracelet" price="$169 AUD" image="assets/img/product-link-bracelet.jpg" href="Aurette Product Page Desktop.dc.html" hint-size="100%,300px"></x-import>
-            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="The Wave Ring" price="$99 AUD" image="assets/img/product-wave-ring.jpg" href="Aurette Product Page Desktop.dc.html" hint-size="100%,300px"></x-import>
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="The Oval Pendant" price="$149 AUD" image="assets/img/product-oval-pendant.jpg" href="product-desktop.dc.html" hint-size="100%,300px"></x-import>
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="The Link Bracelet" price="$169 AUD" image="assets/img/product-link-bracelet.jpg" href="product-desktop.dc.html" hint-size="100%,300px"></x-import>
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="The Wave Ring" price="$99 AUD" image="assets/img/product-wave-ring.jpg" href="product-desktop.dc.html" hint-size="100%,300px"></x-import>
           </div>
         </div>
       </section>
@@ -163,7 +163,7 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:var(--space-4)">
         <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">Shop</span>
-        <a href="Aurette Category Earrings Desktop.dc.html" style="font:var(--type-body-sm);color:var(--color-cream)">Earrings</a>
+        <a href="category-earrings-desktop.dc.html" style="font:var(--type-body-sm);color:var(--color-cream)">Earrings</a>
         <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Bangles</a>
         <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Necklaces</a>
         <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">New in</a>
@@ -177,7 +177,7 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:var(--space-4)">
         <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">About</span>
-        <a href="Aurette About Desktop.dc.html" style="font:var(--type-body-sm);color:var(--color-cream)">Our story</a>
+        <a href="about-desktop.dc.html" style="font:var(--type-body-sm);color:var(--color-cream)">Our story</a>
         <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Materials</a>
         <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Stockists</a>
       </div>

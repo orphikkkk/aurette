@@ -38,10 +38,10 @@
             <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="chevron-down" size="14px" hint-size="14px,14px"></x-import>
           </button>
           <a href="#top" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Collections</a>
-          <a href="Aurette About Desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
+          <a href="about-desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
           <a href="#footer" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Care</a>
         </nav>
-        <a href="Aurette Homepage Desktop.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:24px;letter-spacing:0.3em;text-indent:0.3em;text-transform:uppercase;color:var(--color-ink)">Aurette</a>
+        <a href="index-desktop.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:24px;letter-spacing:0.3em;text-indent:0.3em;text-transform:uppercase;color:var(--color-ink)">Aurette</a>
         <div style="justify-self:end;display:flex;align-items:center;gap:var(--space-6)">
           <a href="#" aria-label="Search" style="display:flex;color:var(--color-ink)">
             <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="search" size="18px" hint-size="18px,18px"></x-import>
@@ -69,7 +69,7 @@
 
   <section id="top" data-screen-label="Category header" style="max-width:var(--container-max);margin:0 auto;padding:var(--space-10) var(--gutter-desktop) var(--space-12);display:flex;flex-direction:column;align-items:center;gap:var(--space-4);text-align:center">
     <nav style="display:flex;align-items:center;gap:var(--space-2);font:var(--type-label);font-size:11px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary)">
-      <a href="Aurette Homepage Desktop.dc.html" style="color:var(--text-secondary)">Home</a>
+      <a href="index-desktop.dc.html" style="color:var(--text-secondary)">Home</a>
       <span>/</span>
       <span style="color:var(--color-ink)">Earrings</span>
     </nav>
@@ -119,10 +119,10 @@
       <sc-for list="{{ items }}" as="item" hint-placeholder-count="7">
         <div>
           <sc-if value="{{ item.hasPhoto }}" hint-placeholder-val="{{ true }}">
-            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="{{ item.name }}" price="{{ item.price }}" image="{{ item.image }}" badge="{{ item.badge }}" href="Aurette Product Page Desktop.dc.html" hint-size="100%,330px"></x-import>
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="{{ item.name }}" price="{{ item.price }}" image="{{ item.image }}" badge="{{ item.badge }}" href="product-desktop.dc.html" hint-size="100%,330px"></x-import>
           </sc-if>
           <sc-if value="{{ item.noPhoto }}" hint-placeholder-val="{{ false }}">
-            <a href="Aurette Product Page Desktop.dc.html" class="au-product">
+            <a href="product-desktop.dc.html" class="au-product">
               <span style="display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:var(--surface-image-pad);border:1px dashed var(--border-subtle);padding:var(--space-4);font:var(--type-label);font-size:10px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary);text-align:center">Photography to come — placeholder</span>
               <span class="au-product__info">
                 <span class="au-product__name">{{ item.name }}</span>
@@ -182,7 +182,7 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:var(--space-4)">
         <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">About</span>
-        <a href="Aurette Homepage Desktop.dc.html#story" style="font:var(--type-body-sm);color:var(--color-cream)">Our story</a>
+        <a href="index-desktop.dc.html#story" style="font:var(--type-body-sm);color:var(--color-cream)">Our story</a>
         <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Materials</a>
         <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Stockists</a>
       </div>
