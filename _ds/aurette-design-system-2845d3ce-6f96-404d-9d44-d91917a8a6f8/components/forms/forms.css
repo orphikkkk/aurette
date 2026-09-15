@@ -1,0 +1,50 @@
+/* Form controls — Aurette. Underline-first, square, hairline. */
+.au-field{display:flex;flex-direction:column;gap:var(--space-2)}
+.au-field__label{font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary)}
+.au-field__hint{font:var(--type-body-sm);font-size:var(--text-xs);color:var(--text-muted)}
+.au-field__error{font:var(--type-body-sm);font-size:var(--text-xs);color:var(--color-error)}
+
+.au-input{font:var(--type-body);color:var(--text-primary);background:transparent;border:1px solid var(--border-medium);border-radius:var(--radius-none);padding:13px 14px;transition:var(--transition-control);width:100%}
+.au-input::placeholder{color:var(--text-muted)}
+.au-input:hover{border-color:var(--color-ink-25)}
+.au-input:focus{outline:none;border-color:var(--border-strong)}
+.au-input--underline{border-width:0 0 1px;padding:10px 0}
+.au-input--invalid{border-color:var(--color-error)}
+.au-input[disabled]{color:var(--text-muted);border-color:var(--border-subtle);cursor:not-allowed}
+.au-input--sm{padding:9px 12px;font-size:var(--text-sm)}
+.au-inputgroup{display:flex;align-items:stretch;gap:0}
+.au-inputgroup .au-input{border-right-width:0}
+.au-inputgroup .au-btn{flex:0 0 auto}
+
+.au-select{position:relative;display:block}
+.au-select select{appearance:none;width:100%;font:var(--type-body);color:var(--text-primary);background:transparent;border:1px solid var(--border-medium);border-radius:var(--radius-none);padding:13px 40px 13px 14px;cursor:pointer;transition:var(--transition-control)}
+.au-select select:hover{border-color:var(--color-ink-25)}
+.au-select select:focus{outline:none;border-color:var(--border-strong)}
+.au-select--underline select{border-width:0 0 1px;padding:10px 30px 10px 0}
+.au-select__chev{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--text-secondary)}
+.au-select--underline .au-select__chev{right:2px}
+
+.au-check{display:inline-flex;align-items:flex-start;gap:var(--space-3);cursor:pointer;font:var(--type-body-sm);color:var(--text-secondary)}
+.au-check input{position:absolute;opacity:0;width:0;height:0}
+.au-check__box{flex:0 0 auto;width:16px;height:16px;margin-top:2px;border:1px solid var(--border-medium);display:inline-flex;align-items:center;justify-content:center;color:transparent;transition:var(--transition-control)}
+.au-check:hover .au-check__box{border-color:var(--border-strong)}
+.au-check input:checked+.au-check__box{background:var(--surface-ink);border-color:var(--surface-ink);color:var(--text-inverse)}
+.au-check input:focus-visible+.au-check__box{outline:1px solid var(--focus-ring);outline-offset:2px}
+.au-check--radio .au-check__box{border-radius:var(--radius-circle)}
+.au-check--radio input:checked+.au-check__box{background:transparent;border-color:var(--surface-ink);color:var(--surface-ink)}
+.au-check--radio .au-check__dot{width:8px;height:8px;border-radius:var(--radius-circle);background:currentColor}
+.au-check--disabled{color:var(--text-muted);cursor:not-allowed}
+
+.au-switch{display:inline-flex;align-items:center;gap:var(--space-3);cursor:pointer;font:var(--type-body-sm);color:var(--text-secondary)}
+.au-switch input{position:absolute;opacity:0;width:0;height:0}
+.au-switch__track{width:38px;height:20px;border-radius:var(--radius-pill);background:var(--color-clay);position:relative;transition:var(--transition-control)}
+.au-switch__knob{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:var(--radius-circle);background:var(--color-white);transition:transform var(--duration-fast) var(--ease-standard)}
+.au-switch input:checked+.au-switch__track{background:var(--color-camel)}
+.au-switch input:checked+.au-switch__track .au-switch__knob{transform:translateX(18px)}
+
+.au-qty{display:inline-flex;align-items:center;border:1px solid var(--border-medium)}
+.au-qty button{width:38px;height:38px;border:0;background:none;color:var(--text-primary);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:var(--transition-control)}
+.au-qty button:hover{color:var(--text-accent)}
+.au-qty button[disabled]{color:var(--color-ink-25);cursor:not-allowed}
+.au-qty__value{min-width:34px;text-align:center;font:var(--type-body-sm);letter-spacing:var(--tracking-wide)}
+.au-qty--underline{border-width:0 0 1px}

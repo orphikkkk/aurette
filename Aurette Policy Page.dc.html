@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/colors.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/typography.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/borders-shadows.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/motion.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/base.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/core/core.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/forms/forms.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/navigation/navigation.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/feedback/feedback.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/commerce/commerce.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/styles.css">
+<script src="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/_ds_bundle.js"></script>
+</helmet>
+
+<div style="background:var(--surface-page);min-height:100%">
+
+  <div style="position:sticky;top:0;z-index:40;background:var(--surface-page)">
+    <sc-if value="{{ showAnnouncement }}" hint-placeholder-val="{{ true }}">
+      <div style="height:28px;display:flex;align-items:center;justify-content:center;background:var(--surface-ink);color:var(--text-inverse);font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;font-size:10px">Free shipping on orders over $150 AUD</div>
+    </sc-if>
+    <header style="height:64px;border-bottom:1px solid var(--border-subtle)">
+      <div style="max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter-desktop);height:64px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center">
+        <nav style="display:flex;align-items:center;gap:var(--space-8)">
+          <button type="button" onClick="{{ toggleShop }}" style="display:flex;align-items:center;gap:6px;background:none;border:0;padding:0;height:64px;color:var(--color-ink);font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase;cursor:pointer">
+            Shop
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="chevron-down" size="14px" hint-size="14px,14px"></x-import>
+          </button>
+          <a href="Aurette Category Earrings Desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Collections</a>
+          <a href="Aurette About Desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
+          <a href="#footer" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Care</a>
+        </nav>
+        <a href="Aurette Homepage Desktop.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:24px;letter-spacing:0.3em;text-indent:0.3em;text-transform:uppercase;color:var(--color-ink)">Aurette</a>
+        <div style="justify-self:end;display:flex;align-items:center;gap:var(--space-6)">
+          <a href="#" aria-label="Search" style="display:flex;color:var(--color-ink)">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="search" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="Account" style="display:flex;color:var(--color-ink)">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="user" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="Bag" style="display:flex;color:var(--color-ink)">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="shopping-bag" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+        </div>
+      </div>
+      <sc-if value="{{ shopOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;background:var(--surface-page);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-overlay)">
+          <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-8) var(--gutter-desktop);display:flex;gap:var(--space-16)">
+            <a href="Aurette Category Earrings Desktop.dc.html" style="font:var(--type-body);color:var(--text-secondary)">Earrings</a>
+            <a href="#" style="font:var(--type-body);color:var(--text-secondary)">Bangles</a>
+            <a href="#" style="font:var(--type-body);color:var(--text-secondary)">Necklaces</a>
+            <a href="Aurette Category Earrings Desktop.dc.html#grid" style="font:var(--type-body);color:var(--text-secondary)">New in</a>
+          </div>
+        </div>
+      </sc-if>
+    </header>
+  </div>
+
+  <article data-screen-label="Policy" style="max-width:var(--container-narrow);margin:0 auto;padding:var(--space-16) var(--gutter-desktop) var(--space-20)">
+    <header style="display:flex;flex-direction:column;gap:var(--space-4);padding-bottom:var(--space-8);border-bottom:1px solid var(--border-subtle)">
+      <h1 style="font:var(--type-h1);font-size:38px;line-height:1.1;margin:0">{{ docTitle }}</h1>
+      <span style="font:var(--type-body-sm);color:var(--text-secondary)">Last updated {{ lastUpdated }}</span>
+      <p style="font:var(--type-body-sm);color:var(--text-muted);margin:0">Placeholder legal copy — replace with language reviewed by your solicitor before launch.</p>
+    </header>
+
+    <nav style="display:flex;flex-direction:column;gap:var(--space-3);padding:var(--space-8) 0;border-bottom:1px solid var(--border-subtle)">
+      <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary)">On this page</span>
+      <sc-for list="{{ sections }}" as="s" hint-placeholder-count="6">
+        <a href="{{ s.anchor }}" style="font:var(--type-body-sm);color:var(--text-secondary);min-height:44px;display:flex;align-items:center">{{ s.title }}</a>
+      </sc-for>
+    </nav>
+
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="6">
+      <section id="{{ s.id }}" style="padding-top:var(--space-12);display:flex;flex-direction:column;gap:var(--space-4)">
+        <h2 style="font:var(--type-h3);font-family:var(--font-display);font-size:24px;line-height:1.25;margin:0">{{ s.title }}</h2>
+        <sc-for list="{{ s.paras }}" as="para" hint-placeholder-count="2">
+          <p style="font:var(--type-body);color:var(--text-primary);margin:0;max-width:68ch;text-wrap:pretty">{{ para }}</p>
+        </sc-for>
+      </section>
+    </sc-for>
+
+    <section style="margin-top:var(--space-16);padding-top:var(--space-8);border-top:1px solid var(--border-subtle);display:flex;flex-direction:column;gap:var(--space-3)">
+      <h2 style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary);margin:0">Questions about this policy</h2>
+      <p style="font:var(--type-body);color:var(--text-primary);margin:0;max-width:68ch">Email hello@aurette.com.au and we'll come back to you within two business days.</p>
+    </section>
+  </article>
+
+  <footer id="footer" data-screen-label="Footer" style="background:var(--surface-ink);color:var(--text-inverse)">
+    <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-20) var(--gutter-desktop) var(--space-10);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--space-16)">
+      <div style="display:flex;flex-direction:column;gap:var(--space-6);align-items:flex-start">
+        <div style="font-family:var(--font-display);font-size:22px;letter-spacing:0.3em;text-indent:0.3em;text-transform:uppercase;color:var(--color-cream)">Aurette</div>
+        <p style="font:var(--type-body-sm);color:var(--color-ink-25);max-width:34ch">Designed in Wollongong, Australia. Made to be worn every day.</p>
+        <div style="display:flex;gap:var(--space-5);margin-top:var(--space-2)">
+          <a href="#" aria-label="Instagram" style="color:var(--color-cream);display:flex">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="instagram" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="TikTok" style="color:var(--color-cream);display:flex">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="music-2" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="Email us" style="color:var(--color-cream);display:flex">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="mail" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">Shop</span>
+        <a href="Aurette Category Earrings Desktop.dc.html" style="font:var(--type-body-sm);color:var(--color-cream)">Earrings</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Bangles</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Necklaces</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">New in</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">Help</span>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Care guide</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Sizing</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Contact</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">FAQ</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">About</span>
+        <a href="Aurette About Desktop.dc.html" style="font:var(--type-body-sm);color:var(--color-cream)">Our story</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Materials</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Stockists</a>
+      </div>
+    </div>
+    <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-6) var(--gutter-desktop) var(--space-12)">
+      <div style="border-top:1px solid var(--color-ink-70);padding-top:var(--space-6);display:flex;justify-content:space-between;gap:var(--space-8)">
+        <span style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--color-ink-25)">© 2026 Aurette</span>
+        <span style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--color-ink-25)">Shipping, returns and policy copy — placeholder.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;document&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Terms of service&quot;,&quot;Privacy policy&quot;],&quot;default&quot;:&quot;Terms of service&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;lastUpdated&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;4 September 2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showAnnouncement&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { shopOpen: false };
+
+  renderVals() {
+    const doc = this.props.document ?? 'Terms of service';
+
+    const terms = [
+      ['These terms', ['These terms apply to everything you buy from aurette.com.au. By placing an order you accept them. We may update them from time to time; the version on this page at the time of your order is the one that applies.']],
+      ['Orders and pricing', ['All prices are shown in Australian dollars and include GST. We try to keep stock counts accurate, but if a piece sells out between your order and our packing bench, we will contact you and refund that item in full.', 'An order confirmation email is an acknowledgement that we received your order, not acceptance of it. Acceptance happens when we ship.']],
+      ['Shipping', ['We ship from Wollongong, New South Wales. Standard delivery within Australia is free on orders over $150 AUD. Delivery estimates are estimates, not guarantees — once a parcel is with the carrier, timing is out of our hands.']],
+      ['Returns and exchanges', ['Placeholder — final returns window, condition requirements and exchange process to be confirmed before launch. For hygiene reasons, earrings are generally excluded from change-of-mind returns; confirm this wording with your solicitor.']],
+      ['Faults and warranty', ['If something arrives faulty or fails under normal wear, email us with your order number and a photo. Nothing in these terms limits your rights under the Australian Consumer Law.']],
+      ['Governing law', ['These terms are governed by the laws of New South Wales, Australia.']],
+    ];
+
+    const privacy = [
+      ['What we collect', ['When you order, we collect your name, email address, delivery address and phone number, plus the details of what you bought. Payment card numbers are handled by our payment provider — we never see or store them.', 'If you subscribe to emails, we store your email address until you unsubscribe.']],
+      ['How we use it', ['We use your information to process and deliver orders, answer your questions, and — if you have opted in — send occasional emails about new pieces. We do not sell your data to anyone.']],
+      ['Who we share it with', ['Only the services we need to run the shop: our ecommerce platform, our payment provider, and the carrier delivering your parcel. Each handles your data under its own privacy terms.']],
+      ['Cookies', ['Our site uses cookies to keep your bag working and to understand which pages people actually use. You can block them in your browser; parts of the checkout may stop working if you do.']],
+      ['Your choices', ['You can ask us for a copy of what we hold about you, ask us to correct it, or ask us to delete it. Email us and we will action it within a reasonable period.']],
+      ['Contact and complaints', ['Placeholder — privacy officer contact details and the complaints escalation path to be confirmed before launch.']],
+    ];
+
+    const source = doc === 'Privacy policy' ? privacy : terms;
+    const sections = source.map(([title, paras], i) => {
+      const id = 'section-' + (i + 1);
+      return { id, anchor: '#' + id, title, paras };
+    });
+
+    return {
+      showAnnouncement: this.props.showAnnouncement ?? true,
+      shopOpen: this.state.shopOpen,
+      toggleShop: () => this.setState(s => ({ shopOpen: !s.shopOpen })),
+      docTitle: doc,
+      lastUpdated: this.props.lastUpdated ?? '4 September 2026',
+      sections,
+    };
+  }
+}
+</script>
+</body>
+</html>

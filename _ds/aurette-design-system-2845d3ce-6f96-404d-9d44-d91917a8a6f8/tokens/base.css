@@ -1,0 +1,12 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-primary);font:var(--type-body);-webkit-font-smoothing:antialiased;text-wrap:pretty}
+h1,h2,h3,h4{margin:0;font-weight:var(--weight-display);letter-spacing:var(--tracking-display)}
+h1{font:var(--type-h1)}h2{font:var(--type-h2)}h3{font:var(--type-h3)}
+p{margin:0}
+img{display:block;max-width:100%}
+a{color:var(--text-link);text-decoration:none;transition:var(--transition-control)}
+a:hover{color:var(--text-link-hover)}
+button{font-family:var(--font-sans)}
+:focus-visible{outline:1px solid var(--focus-ring);outline-offset:2px}
+.au-eyebrow{font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary)}
+.au-italic{font-family:var(--font-display-italic);font-style:italic;font-weight:var(--weight-light)}

@@ -1,0 +1,27 @@
+:root{
+/* Aurette is a square-cornered brand: hairline rules do the work, not radius.
+   Radius appears only on pills (badges) and circular controls (dots, avatars). */
+--radius-none:0px;
+--radius-xs:2px;
+--radius-sm:4px;
+--radius-pill:999px;
+--radius-circle:50%;
+
+--border-hairline:1px;
+--border-thick:1.5px;
+--rule-hairline:1px solid var(--border-subtle);
+--rule-medium:1px solid var(--border-medium);
+--rule-strong:1px solid var(--border-strong);
+
+/* Shadows are near-absent. Product tiles sit on tinted panels, not on shadows.
+   The two below are for lifted overlays only (cart drawer, dropdown, dialog). */
+--shadow-none:none;
+--shadow-overlay:0 1px 40px rgba(27,24,17,.10);
+--shadow-drawer:-1px 0 48px rgba(27,24,17,.14);
+
+/* Scrim + protection gradient for text over photography */
+--scrim-image:rgba(27,24,17,.24);
+--scrim-modal:rgba(27,24,17,.42);
+--gradient-protection:linear-gradient(to top,rgba(27,24,17,.55) 0%,rgba(27,24,17,0) 62%); /* @kind color */
+--blur-overlay:blur(6px); /* @kind other */
+}

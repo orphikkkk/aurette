@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/colors.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/typography.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/borders-shadows.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/motion.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/base.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/core/core.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/forms/forms.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/navigation/navigation.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/feedback/feedback.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/commerce/commerce.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/styles.css">
+<script src="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/_ds_bundle.js"></script>
+</helmet>
+
+<div style="background:var(--surface-page);min-width:1024px">
+
+  <div style="position:sticky;top:0;z-index:40;background:var(--surface-page)">
+    <sc-if value="{{ showAnnouncement }}" hint-placeholder-val="{{ true }}">
+      <div style="height:28px;display:flex;align-items:center;justify-content:center;background:var(--surface-ink);color:var(--text-inverse);font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;font-size:10px">Free shipping on orders over $150 AUD</div>
+    </sc-if>
+    <header style="height:64px;border-bottom:1px solid var(--border-subtle)">
+      <div style="max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter-desktop);height:64px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center">
+        <nav style="display:flex;align-items:center;gap:var(--space-8)">
+          <button type="button" onClick="{{ toggleShop }}" style="display:flex;align-items:center;gap:6px;background:none;border:0;padding:0;height:64px;color:var(--color-ink);font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase;cursor:pointer">
+            Shop
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="chevron-down" size="14px" hint-size="14px,14px"></x-import>
+          </button>
+          <a href="Aurette Category Earrings Desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Collections</a>
+          <a href="Aurette About Desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
+          <a href="#footer" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Care</a>
+        </nav>
+        <a href="Aurette Homepage Desktop.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:24px;letter-spacing:0.3em;text-indent:0.3em;text-transform:uppercase;color:var(--color-ink)">Aurette</a>
+        <div style="justify-self:end;display:flex;align-items:center;gap:var(--space-6)">
+          <a href="#" aria-label="Search" style="display:flex;color:var(--color-ink)">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="search" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="Account" style="display:flex;color:var(--color-ink)">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="user" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="Bag" style="display:flex;color:var(--color-ink)">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="shopping-bag" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+        </div>
+      </div>
+      <sc-if value="{{ shopOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;background:var(--surface-page);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-overlay)">
+          <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-8) var(--gutter-desktop);display:flex;gap:var(--space-16)">
+            <a href="Aurette Category Earrings Desktop.dc.html" style="font:var(--type-body);color:var(--text-secondary)">Earrings</a>
+            <a href="#categories" style="font:var(--type-body);color:var(--text-secondary)">Bangles</a>
+            <a href="#categories" style="font:var(--type-body);color:var(--text-secondary)">Necklaces</a>
+            <a href="#featured" style="font:var(--type-body);color:var(--text-secondary)">New in</a>
+          </div>
+        </div>
+      </sc-if>
+    </header>
+  </div>
+
+  <section data-screen-label="Hero" style="position:relative">
+    <img src="assets/img/hero-model.jpg" alt="Gold hoops worn with a linen shirt" style="width:100%;height:620px;object-fit:cover;object-position:50% 28%">
+    <div style="position:absolute;inset:0;background:var(--gradient-protection)"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:flex-end">
+      <div style="width:100%;max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter-desktop) var(--space-16);display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-6)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-white)">New in</span>
+        <h1 style="font:var(--type-hero);color:var(--color-white);margin:0;max-width:14ch">Everyday gold, made <span class="au-italic">personal</span>.</h1>
+        <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Button" variant="primary" size="md" href="#featured" hint-size="170px,44px">Shop new arrivals</x-import>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured" data-screen-label="Featured products" style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter-desktop) 0">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-8);margin-bottom:var(--space-8)">
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary)">New in</span>
+        <h2 style="font:var(--type-h2)">Loved right now.</h2>
+      </div>
+      <a href="#" style="flex:0 0 auto;font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;border-bottom:1px solid var(--color-ink);padding-bottom:3px">View all</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--grid-gap-product)">
+      <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="The Twist Hoops" price="$129 AUD" image="assets/img/product-twist-hoops.jpg" badge="New" hint-size="100%,340px"></x-import>
+      <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="The Oval Pendant" price="$149 AUD" image="assets/img/product-oval-pendant.jpg" hint-size="100%,340px"></x-import>
+      <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="The Link Bracelet" price="$169 AUD" image="assets/img/product-link-bracelet.jpg" hint-size="100%,340px"></x-import>
+      <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="The Wave Ring" price="$99 AUD" image="assets/img/product-wave-ring.jpg" hint-size="100%,340px"></x-import>
+    </div>
+  </section>
+
+  <section id="campaign" data-screen-label="Campaign" style="margin-top:var(--section-y);display:grid;grid-template-columns:1.25fr 1fr;align-items:stretch">
+    <img src="assets/img/category-rings.jpg" alt="Stacked gold rings worn on a hand" style="width:100%;height:100%;min-height:480px;object-fit:cover">
+    <div style="background:var(--surface-highlight);padding:var(--space-20) var(--space-16);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:var(--space-5)">
+      <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink)">Thoughtfully different</span>
+      <h2 style="font:var(--type-h2);color:var(--color-ink)">Wear it in the shower.</h2>
+      <p style="font:var(--type-body);color:var(--color-ink);max-width:36ch">Waterproof, tarnish resistant and gentle on skin — the Essentials are built for every day.</p>
+      <div style="margin-top:var(--space-2)">
+        <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Button" variant="secondary" size="md" href="#featured" hint-size="160px,44px">Shop essentials</x-import>
+      </div>
+    </div>
+  </section>
+
+  <section id="categories" data-screen-label="Categories" style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter-desktop) 0">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-3);text-align:center;margin-bottom:var(--space-8)">
+      <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary)">Shop by category</span>
+      <h2 style="font:var(--type-h2)">Three ways to wear it.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--grid-gap-editorial)">
+      <x-import component-from-global-scope="AuretteDesignSystem_2845d3.CategoryTile" label="Earrings" image="assets/img/category-earrings.jpg" href="#" hint-size="100%,520px"></x-import>
+      <x-import component-from-global-scope="AuretteDesignSystem_2845d3.CategoryTile" label="Bangles" image="assets/img/category-bracelets.jpg" href="#" hint-size="100%,520px"></x-import>
+      <x-import component-from-global-scope="AuretteDesignSystem_2845d3.CategoryTile" label="Necklaces" image="assets/img/category-necklaces.jpg" href="#" hint-size="100%,520px"></x-import>
+    </div>
+  </section>
+
+  <section id="story" data-screen-label="Family story" style="margin-top:var(--section-y);background:var(--surface-band)">
+    <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-20) var(--gutter-desktop);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center">
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-5)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary)">Wollongong, Australia</span>
+        <p style="font-family:var(--font-display);font-size:var(--text-xl);line-height:1.3;color:var(--text-primary);max-width:22ch">We're a family business on the coast, making gold you can actually live in.</p>
+        <p style="font:var(--type-body);color:var(--text-secondary);max-width:44ch">Designed by us, worn every day by us — in the surf, the shower and everywhere after.</p>
+        <a href="#" style="margin-top:var(--space-2);font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;border-bottom:1px solid var(--color-ink);padding-bottom:4px">Our story</a>
+      </div>
+      <img src="assets/img/ugc-2.jpg" alt="Stacked bangles on a wrist" style="width:100%;aspect-ratio:4/3;object-fit:cover">
+    </div>
+  </section>
+
+  <section data-screen-label="Instagram" style="max-width:var(--container-max);margin:0 auto;padding:var(--section-y) var(--gutter-desktop)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-3);text-align:center;margin-bottom:var(--space-8)">
+      <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary)">@aurette.jewellery</span>
+      <h2 style="font:var(--type-h2)">Worn your way.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--space-2)">
+      <sc-for list="{{ feed }}" as="shot" hint-placeholder-count="6">
+        <a href="#" style="display:block;background:var(--surface-image-pad)">
+          <img src="{{ shot.src }}" alt="{{ shot.alt }}" style="width:100%;aspect-ratio:1/1;object-fit:cover">
+        </a>
+      </sc-for>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:var(--space-8)">
+      <a href="#" style="font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;border-bottom:1px solid var(--color-ink);padding-bottom:4px">Follow us</a>
+    </div>
+  </section>
+
+  <footer id="footer" data-screen-label="Footer" style="background:var(--surface-ink);color:var(--text-inverse)">
+    <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-20) var(--gutter-desktop) var(--space-10);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--space-16)">
+      <div style="display:flex;flex-direction:column;gap:var(--space-6);align-items:flex-start">
+        <div style="font-family:var(--font-display);font-size:22px;letter-spacing:0.3em;text-indent:0.3em;text-transform:uppercase;color:var(--color-cream)">Aurette</div>
+        <p style="font:var(--type-body-sm);color:var(--color-ink-25);max-width:34ch">Designed in Wollongong, Australia. Made to be worn every day.</p>
+        <div style="display:flex;gap:var(--space-5);margin-top:var(--space-2)">
+          <a href="#" aria-label="Instagram" style="color:var(--color-cream);display:flex">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="instagram" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="TikTok" style="color:var(--color-cream);display:flex">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="music-2" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="Email us" style="color:var(--color-cream);display:flex">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="mail" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">Shop</span>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Earrings</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Bangles</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Necklaces</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">New in</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">Help</span>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Care guide</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Sizing</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Contact</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">FAQ</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">About</span>
+        <a href="#story" style="font:var(--type-body-sm);color:var(--color-cream)">Our story</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Materials</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Stockists</a>
+      </div>
+    </div>
+    <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-6) var(--gutter-desktop) var(--space-12)">
+      <div style="border-top:1px solid var(--color-ink-70);padding-top:var(--space-6);display:flex;justify-content:space-between;gap:var(--space-8)">
+        <span style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--color-ink-25)">© 2026 Aurette</span>
+        <span style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--color-ink-25)">Shipping, returns and policy copy — placeholder.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showAnnouncement&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;instagramCount&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;6&quot;,&quot;9&quot;],&quot;default&quot;:&quot;6&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { shopOpen: false };
+  renderVals() {
+    const all = [
+      { src: 'assets/img/ugc-1.jpg', alt: 'Hoops worn at the beach' },
+      { src: 'assets/img/ugc-2.jpg', alt: 'Stacked bangles on a wrist' },
+      { src: 'assets/img/ugc-3.jpg', alt: 'Pendant necklace close up' },
+      { src: 'assets/img/product-twist-hoops.jpg', alt: 'The Twist Hoops' },
+      { src: 'assets/img/ugc-4.jpg', alt: 'Gold chain layered with a tee' },
+      { src: 'assets/img/product-link-bracelet.jpg', alt: 'The Link Bracelet' },
+      { src: 'assets/img/ugc-5.jpg', alt: 'Ear stack in morning light' },
+      { src: 'assets/img/product-oval-pendant.jpg', alt: 'The Oval Pendant' },
+      { src: 'assets/img/product-wave-ring.jpg', alt: 'The Wave Ring' },
+    ];
+    const count = parseInt(this.props.instagramCount ?? '6', 10);
+    return {
+      showAnnouncement: this.props.showAnnouncement ?? true,
+      shopOpen: this.state.shopOpen,
+      feed: all.slice(0, count),
+      toggleShop: () => this.setState(s => ({ shopOpen: !s.shopOpen })),
+    };
+  }
+}
+</script>
+</body>
+</html>

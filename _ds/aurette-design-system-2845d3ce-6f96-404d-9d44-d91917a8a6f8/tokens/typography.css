@@ -1,0 +1,53 @@
+:root{
+/* ---- Families ---- */
+--font-display:"Marcellus",Georgia,"Times New Roman",serif;
+--font-display-italic:"Cormorant Garamond","Marcellus",Georgia,serif;
+--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;
+
+/* ---- Size scale (px, editorial-led) ---- */
+--text-3xs:10px;
+--text-2xs:11px;
+--text-xs:12px;
+--text-sm:13px;
+--text-base:15px;
+--text-md:17px;
+--text-lg:20px;
+--text-xl:26px;
+--text-2xl:34px;
+--text-3xl:44px;
+--text-4xl:56px;
+--text-5xl:72px;
+
+/* ---- Weights: sans carries weight, serif never does ---- */
+--weight-light:300;
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:600;
+--weight-display:400;
+
+/* ---- Line heights ---- */
+--leading-display:1.06;
+--leading-heading:1.18;
+--leading-snug:1.35;
+--leading-body:1.6;
+--leading-loose:1.75;
+
+/* ---- Tracking ---- */
+--tracking-display:-0.01em;
+--tracking-normal:0;
+--tracking-wide:0.04em;
+--tracking-label:0.14em;
+--tracking-eyebrow:0.18em;
+
+/* ---- Composite roles ---- */
+--type-hero:var(--weight-display) var(--text-4xl)/var(--leading-display) var(--font-display);
+--type-h1:var(--weight-display) var(--text-3xl)/var(--leading-display) var(--font-display);
+--type-h2:var(--weight-display) var(--text-2xl)/var(--leading-heading) var(--font-display);
+--type-h3:var(--weight-display) var(--text-xl)/var(--leading-heading) var(--font-display);
+--type-product-name:var(--weight-display) var(--text-lg)/var(--leading-snug) var(--font-display);
+--type-body:var(--weight-regular) var(--text-base)/var(--leading-body) var(--font-sans);
+--type-body-sm:var(--weight-regular) var(--text-sm)/var(--leading-body) var(--font-sans);
+--type-label:var(--weight-medium) var(--text-2xs)/1.2 var(--font-sans);
+--type-nav:var(--weight-medium) var(--text-2xs)/1.2 var(--font-sans);
+--type-button:var(--weight-semibold) var(--text-2xs)/1 var(--font-sans);
+}

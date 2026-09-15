@@ -1,0 +1,23 @@
+/* Feedback — Aurette */
+.au-scrim{position:fixed;inset:0;background:var(--scrim-modal);z-index:40;animation:au-fade var(--duration-base) var(--ease-standard)}
+@keyframes au-fade{from{opacity:0}to{opacity:1}}
+@keyframes au-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes au-slide-in{from{transform:translateX(100%)}to{transform:none}}
+.au-dialog{position:fixed;z-index:41;background:var(--surface-raised);box-shadow:var(--shadow-overlay);color:var(--text-primary)}
+.au-dialog--center{top:50%;left:50%;transform:translate(-50%,-50%);width:min(520px,calc(100vw - 40px));padding:var(--space-10);animation:au-rise var(--duration-base) var(--ease-standard)}
+.au-dialog--drawer{top:0;right:0;bottom:0;width:min(420px,100vw);padding:var(--space-8);box-shadow:var(--shadow-drawer);animation:au-slide-in var(--duration-slow) var(--ease-out-soft);display:flex;flex-direction:column}
+.au-dialog__head{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-6);margin-bottom:var(--space-6)}
+.au-dialog__title{font:var(--type-h3)}
+.au-dialog__title--label{font:var(--type-label);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase}
+.au-dialog__body{flex:1;min-height:0;overflow:auto;font:var(--type-body-sm);color:var(--text-secondary)}
+.au-dialog__foot{margin-top:var(--space-8);display:flex;flex-direction:column;gap:var(--space-3)}
+
+.au-toast{position:fixed;left:50%;bottom:var(--space-8);transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:var(--space-3);background:var(--surface-ink);color:var(--text-inverse);padding:14px 20px;font:var(--type-body-sm);animation:au-rise var(--duration-base) var(--ease-standard);max-width:min(520px,calc(100vw - 40px))}
+.au-toast--success{background:var(--surface-ink)}
+.au-toast--error{background:var(--color-error);color:var(--color-white)}
+.au-toast__close{margin-left:var(--space-4);color:inherit;opacity:.6;background:none;border:0;cursor:pointer;display:inline-flex}
+.au-toast__close:hover{opacity:1}
+
+.au-tooltip{position:relative;display:inline-flex}
+.au-tooltip__bubble{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--surface-ink);color:var(--text-inverse);font:var(--type-body-sm);font-size:var(--text-xs);padding:7px 10px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity var(--duration-fast) var(--ease-standard);z-index:30}
+.au-tooltip:hover .au-tooltip__bubble,.au-tooltip:focus-within .au-tooltip__bubble{opacity:1}

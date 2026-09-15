@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/colors.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/typography.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/borders-shadows.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/motion.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/tokens/base.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/core/core.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/forms/forms.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/navigation/navigation.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/feedback/feedback.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/components/commerce/commerce.css">
+<link rel="stylesheet" href="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/styles.css">
+<script src="_ds/aurette-design-system-2845d3ce-6f96-404d-9d44-d91917a8a6f8/_ds_bundle.js"></script>
+</helmet>
+
+<div style="background:var(--surface-page);min-height:100%">
+
+  <div style="position:sticky;top:0;z-index:40;background:var(--surface-page)">
+    <sc-if value="{{ showAnnouncement }}" hint-placeholder-val="{{ true }}">
+      <div style="height:28px;display:flex;align-items:center;justify-content:center;background:var(--surface-ink);color:var(--text-inverse);font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;font-size:10px">Free shipping on orders over $150 AUD</div>
+    </sc-if>
+    <header style="height:64px;border-bottom:1px solid var(--border-subtle)">
+      <div style="max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter-desktop);height:64px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center">
+        <nav style="display:flex;align-items:center;gap:var(--space-8)">
+          <button type="button" onClick="{{ toggleShop }}" style="display:flex;align-items:center;gap:6px;background:none;border:0;padding:0;height:64px;color:var(--color-ink);font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase;cursor:pointer">
+            Shop
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="chevron-down" size="14px" hint-size="14px,14px"></x-import>
+          </button>
+          <a href="#top" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Collections</a>
+          <a href="Aurette About Desktop.dc.html" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">About</a>
+          <a href="#footer" style="font:var(--type-nav);letter-spacing:var(--tracking-label);text-transform:uppercase">Care</a>
+        </nav>
+        <a href="Aurette Homepage Desktop.dc.html" style="justify-self:center;font-family:var(--font-display);font-size:24px;letter-spacing:0.3em;text-indent:0.3em;text-transform:uppercase;color:var(--color-ink)">Aurette</a>
+        <div style="justify-self:end;display:flex;align-items:center;gap:var(--space-6)">
+          <a href="#" aria-label="Search" style="display:flex;color:var(--color-ink)">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="search" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="Account" style="display:flex;color:var(--color-ink)">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="user" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="Bag" style="display:flex;color:var(--color-ink)">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="shopping-bag" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+        </div>
+      </div>
+      <sc-if value="{{ shopOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:0;right:0;background:var(--surface-page);border-bottom:1px solid var(--border-subtle);box-shadow:var(--shadow-overlay)">
+          <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-8) var(--gutter-desktop);display:flex;gap:var(--space-16)">
+            <a href="#top" style="font:var(--type-body);color:var(--color-ink)">Earrings</a>
+            <a href="#" style="font:var(--type-body);color:var(--text-secondary)">Bangles</a>
+            <a href="#" style="font:var(--type-body);color:var(--text-secondary)">Necklaces</a>
+            <a href="#grid" style="font:var(--type-body);color:var(--text-secondary)">New in</a>
+          </div>
+        </div>
+      </sc-if>
+    </header>
+  </div>
+
+  <section id="top" data-screen-label="Category header" style="max-width:var(--container-max);margin:0 auto;padding:var(--space-10) var(--gutter-desktop) var(--space-12);display:flex;flex-direction:column;align-items:center;gap:var(--space-4);text-align:center">
+    <nav style="display:flex;align-items:center;gap:var(--space-2);font:var(--type-label);font-size:11px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary)">
+      <a href="Aurette Homepage Desktop.dc.html" style="color:var(--text-secondary)">Home</a>
+      <span>/</span>
+      <span style="color:var(--color-ink)">Earrings</span>
+    </nav>
+    <h1 style="font:var(--type-h1);margin:0">Earrings.</h1>
+    <p style="font:var(--type-body);color:var(--text-secondary);max-width:46ch;text-wrap:pretty">Seven pairs we actually wear — hoops for every day, studs for the second hole.</p>
+  </section>
+
+  <sc-if value="{{ showCategoryImage }}" hint-placeholder-val="{{ true }}">
+    <img src="assets/img/category-earrings.jpg" alt="Gold hoops worn with hair tucked behind the ear" style="width:100%;height:420px;object-fit:cover;object-position:50% 32%;background:var(--surface-image-pad)">
+  </sc-if>
+
+  <section data-screen-label="Filter and sort" style="position:sticky;top:92px;z-index:30;background:var(--surface-page);border-bottom:1px solid var(--border-subtle);margin-top:var(--space-12)">
+    <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-5) var(--gutter-desktop);display:flex;align-items:center;justify-content:space-between;gap:var(--space-8)">
+      <div style="display:flex;align-items:center;gap:var(--space-6)">
+        <sc-if value="{{ showFilterChips }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;gap:var(--space-2)">
+            <sc-for list="{{ chips }}" as="chip" hint-placeholder-count="4">
+              <button type="button" onClick="{{ chip.onClick }}" style="min-height:36px;padding:0 var(--space-5);background:{{ chip.bg }};color:{{ chip.fg }};border:1px solid {{ chip.border }};font:var(--type-label);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase;cursor:pointer;transition:var(--transition-control)">{{ chip.label }}</button>
+            </sc-for>
+          </div>
+        </sc-if>
+        <span style="font:var(--type-body-sm);color:var(--text-secondary)">{{ countLabel }}</span>
+      </div>
+      <div style="position:relative">
+        <button type="button" onClick="{{ toggleSort }}" style="display:flex;align-items:center;gap:var(--space-2);min-height:36px;background:none;border:0;padding:0;color:var(--color-ink);font:var(--type-label);font-size:var(--text-xs);letter-spacing:var(--tracking-label);text-transform:uppercase;cursor:pointer">
+          {{ sort }}
+          <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="{{ sortIcon }}" size="14px" hint-size="14px,14px"></x-import>
+        </button>
+        <sc-if value="{{ sortOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;right:0;top:calc(100% + 12px);min-width:210px;background:var(--surface-page);border:1px solid var(--border-subtle);box-shadow:var(--shadow-overlay);display:flex;flex-direction:column;padding:var(--space-2) 0">
+            <sc-for list="{{ sortOptions }}" as="opt" hint-placeholder-count="4">
+              <button type="button" onClick="{{ opt.onClick }}" style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);min-height:40px;padding:0 var(--space-4);background:none;border:0;color:{{ opt.fg }};font:var(--type-body-sm);text-align:left;cursor:pointer">
+                {{ opt.label }}
+                <sc-if value="{{ opt.active }}" hint-placeholder-val="{{ false }}">
+                  <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="check" size="14px" hint-size="14px,14px"></x-import>
+                </sc-if>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section id="grid" data-screen-label="Product grid" style="max-width:var(--container-max);margin:0 auto;padding:var(--space-12) var(--gutter-desktop) var(--section-y)">
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-12) var(--space-4)">
+      <sc-for list="{{ items }}" as="item" hint-placeholder-count="7">
+        <div>
+          <sc-if value="{{ item.hasPhoto }}" hint-placeholder-val="{{ true }}">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.ProductCard" name="{{ item.name }}" price="{{ item.price }}" image="{{ item.image }}" badge="{{ item.badge }}" href="Aurette Product Page Desktop.dc.html" hint-size="100%,330px"></x-import>
+          </sc-if>
+          <sc-if value="{{ item.noPhoto }}" hint-placeholder-val="{{ false }}">
+            <a href="Aurette Product Page Desktop.dc.html" class="au-product">
+              <span style="display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:var(--surface-image-pad);border:1px dashed var(--border-subtle);padding:var(--space-4);font:var(--type-label);font-size:10px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary);text-align:center">Photography to come — placeholder</span>
+              <span class="au-product__info">
+                <span class="au-product__name">{{ item.name }}</span>
+                <span class="au-product__price">{{ item.price }}</span>
+              </span>
+            </a>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+    <p style="margin-top:var(--space-10);font:var(--type-body-sm);font-size:var(--text-xs);color:var(--text-secondary)">Five pieces are awaiting their shoot — tiles marked placeholder.</p>
+  </section>
+
+  <section data-screen-label="Help note" style="background:var(--surface-band)">
+    <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-16) var(--gutter-desktop);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:var(--space-3);align-items:flex-start">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary)">Not sure where to start</span>
+        <p style="font-family:var(--font-display);font-size:32px;line-height:1.2;color:var(--text-primary);margin:0">Start with hoops. Everything else stacks around them.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4);align-items:flex-start">
+        <p style="font:var(--type-body);color:var(--text-secondary);margin:0;max-width:44ch">Ours are waterproof, tarnish resistant and gentle on skin — wear them in the surf, the shower and everywhere after.</p>
+        <a href="#" style="font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;border-bottom:1px solid var(--color-ink);padding-bottom:3px">Read the care guide</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" data-screen-label="Footer" style="background:var(--surface-ink);color:var(--text-inverse)">
+    <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-20) var(--gutter-desktop) var(--space-10);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--space-16)">
+      <div style="display:flex;flex-direction:column;gap:var(--space-6);align-items:flex-start">
+        <div style="font-family:var(--font-display);font-size:22px;letter-spacing:0.3em;text-indent:0.3em;text-transform:uppercase;color:var(--color-cream)">Aurette</div>
+        <p style="font:var(--type-body-sm);color:var(--color-ink-25);max-width:34ch">Designed in Wollongong, Australia. Made to be worn every day.</p>
+        <div style="display:flex;gap:var(--space-5);margin-top:var(--space-2)">
+          <a href="#" aria-label="Instagram" style="color:var(--color-cream);display:flex">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="instagram" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="TikTok" style="color:var(--color-cream);display:flex">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="music-2" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+          <a href="#" aria-label="Email us" style="color:var(--color-cream);display:flex">
+            <x-import component-from-global-scope="AuretteDesignSystem_2845d3.Icon" name="mail" size="18px" hint-size="18px,18px"></x-import>
+          </a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">Shop</span>
+        <a href="#top" style="font:var(--type-body-sm);color:var(--color-cream)">Earrings</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Bangles</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Necklaces</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">New in</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">Help</span>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Care guide</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Sizing</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Contact</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">FAQ</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <span style="font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--color-ink-25)">About</span>
+        <a href="Aurette Homepage Desktop.dc.html#story" style="font:var(--type-body-sm);color:var(--color-cream)">Our story</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Materials</a>
+        <a href="#" style="font:var(--type-body-sm);color:var(--color-cream)">Stockists</a>
+      </div>
+    </div>
+    <div style="max-width:var(--container-max);margin:0 auto;padding:var(--space-6) var(--gutter-desktop) var(--space-12)">
+      <div style="border-top:1px solid var(--color-ink-70);padding-top:var(--space-6);display:flex;justify-content:space-between;gap:var(--space-8)">
+        <span style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--color-ink-25)">© 2026 Aurette</span>
+        <span style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--color-ink-25)">Shipping, returns and policy copy — placeholder.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showAnnouncement&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showCategoryImage&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showFilterChips&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { shopOpen: false, sortOpen: false, sort: 'Featured', style: 'All' };
+
+  renderVals() {
+    const products = [
+      { name: 'The Twist Hoops', price: 129, image: 'assets/img/product-twist-hoops.jpg', badge: 'New', style: 'Hoops' },
+      { name: 'The Fine Hoops', price: 69, style: 'Hoops' },
+      { name: 'The Dome Studs', price: 79, style: 'Studs' },
+      { name: 'The Everyday Hoops', price: 139, image: 'assets/img/category-earrings.jpg', style: 'Hoops' },
+      { name: 'The Huggie Hoops', price: 89, style: 'Hoops' },
+      { name: 'The Sculpt Studs', price: 95, style: 'Studs' },
+      { name: 'The Chain Drops', price: 119, badge: 'New', style: 'Drops' },
+    ];
+
+    const style = this.state.style;
+    let items = style === 'All' ? products.slice() : products.filter(p => p.style === style);
+    if (this.state.sort === 'Price: low to high') items.sort((a, b) => a.price - b.price);
+    if (this.state.sort === 'Price: high to low') items.sort((a, b) => b.price - a.price);
+    if (this.state.sort === 'Newest') items.sort((a, b) => (b.badge ? 1 : 0) - (a.badge ? 1 : 0));
+
+    const chips = ['All', 'Hoops', 'Studs', 'Drops'].map(label => {
+      const on = label === style;
+      return {
+        label,
+        bg: on ? 'var(--color-ink)' : 'transparent',
+        fg: on ? 'var(--color-cream)' : 'var(--color-ink)',
+        border: on ? 'var(--color-ink)' : 'var(--border-subtle)',
+        onClick: () => this.setState({ style: label }),
+      };
+    });
+
+    const sortOptions = ['Featured', 'Newest', 'Price: low to high', 'Price: high to low'].map(label => ({
+      label,
+      active: label === this.state.sort,
+      fg: label === this.state.sort ? 'var(--color-ink)' : 'var(--text-secondary)',
+      onClick: () => this.setState({ sort: label, sortOpen: false }),
+    }));
+
+    return {
+      showAnnouncement: this.props.showAnnouncement ?? true,
+      showCategoryImage: this.props.showCategoryImage ?? true,
+      showFilterChips: this.props.showFilterChips ?? true,
+      shopOpen: this.state.shopOpen,
+      toggleShop: () => this.setState(s => ({ shopOpen: !s.shopOpen })),
+      sortOpen: this.state.sortOpen,
+      sortIcon: this.state.sortOpen ? 'chevron-up' : 'chevron-down',
+      toggleSort: () => this.setState(s => ({ sortOpen: !s.sortOpen })),
+      sort: this.state.sort,
+      sortOptions,
+      chips,
+      items: items.map(p => ({ ...p, price: '$' + p.price + ' AUD', hasPhoto: !!p.image, noPhoto: !p.image })),
+      countLabel: items.length + (items.length === 1 ? ' piece' : ' pieces'),
+    };
+  }
+}
+</script>
+</body>
+</html>

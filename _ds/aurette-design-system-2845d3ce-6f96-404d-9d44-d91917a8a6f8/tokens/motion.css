@@ -1,0 +1,13 @@
+:root{
+--duration-instant:90ms; /* @kind other */
+--duration-fast:160ms; /* @kind other */
+--duration-base:240ms; /* @kind other */
+--duration-slow:420ms; /* @kind other */
+--duration-image:700ms; /* @kind other */
+--ease-standard:cubic-bezier(.22,.61,.36,1); /* @kind other */
+--ease-out-soft:cubic-bezier(.16,.84,.44,1); /* @kind other */
+--ease-in-out:cubic-bezier(.4,0,.2,1); /* @kind other */
+/* No bounce, no overshoot, no spring anywhere in this brand. */
+--transition-control:color var(--duration-fast) var(--ease-standard),background-color var(--duration-fast) var(--ease-standard),border-color var(--duration-fast) var(--ease-standard),opacity var(--duration-fast) var(--ease-standard);
+--transition-image:transform var(--duration-image) var(--ease-out-soft),opacity var(--duration-slow) var(--ease-standard);
+}

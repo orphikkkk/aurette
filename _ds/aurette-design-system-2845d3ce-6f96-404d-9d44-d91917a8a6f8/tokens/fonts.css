@@ -1,0 +1,8 @@
+/* Aurette webfonts.
+   No licensed binaries were supplied with the brand materials, so the two
+   families named in DESIGN.md (Marcellus, Manrope) are loaded from Google Fonts,
+   where both are the genuine article — not substitutes.
+   Cormorant Garamond Italic is an ADDITION: Marcellus ships no italic, and the
+   homepage mockup sets one emphasised word of the hero headline in serif italic.
+   Swap it out if the brand licenses a serif with a true italic companion. */
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@200..800&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap");

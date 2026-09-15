@@ -1,0 +1,39 @@
+/* Commerce — Aurette */
+.au-product{display:flex;flex-direction:column;gap:var(--space-3);background:none;text-align:left;text-decoration:none;color:inherit}
+.au-product__media{position:relative;overflow:hidden;background:var(--surface-image-pad);aspect-ratio:1/1}
+.au-product__media img{width:100%;height:100%;object-fit:cover;transition:var(--transition-image)}
+.au-product:hover .au-product__media img{transform:scale(1.03)}
+.au-product__alt{position:absolute;inset:0;opacity:0;transition:opacity var(--duration-slow) var(--ease-standard)}
+.au-product:hover .au-product__alt{opacity:1}
+.au-product__badge{position:absolute;top:12px;left:12px}
+.au-product__save{position:absolute;top:8px;right:8px;opacity:0;transition:opacity var(--duration-fast) var(--ease-standard)}
+.au-product:hover .au-product__save,.au-product__save:focus-within{opacity:1}
+.au-product__name{font:var(--type-label);font-size:var(--text-xs);letter-spacing:var(--tracking-wide);color:var(--text-primary)}
+.au-product__name--serif{font:var(--type-product-name);letter-spacing:var(--tracking-normal)}
+.au-product__meta{font:var(--type-body-sm);font-size:var(--text-xs);color:var(--text-muted)}
+.au-product__price{font:var(--type-body-sm);font-size:var(--text-xs);letter-spacing:var(--tracking-wide);color:var(--text-price)}
+.au-product__info{display:flex;flex-direction:column;gap:5px}
+
+.au-cat{position:relative;display:block;overflow:hidden;aspect-ratio:3/4;color:var(--color-white)}
+.au-cat img{width:100%;height:100%;object-fit:cover;transition:var(--transition-image)}
+.au-cat:hover img{transform:scale(1.04)}
+.au-cat__veil{position:absolute;inset:0;background:var(--gradient-protection)}
+.au-cat__label{position:absolute;left:0;right:0;bottom:22px;text-align:center;font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--color-white)}
+.au-cat__label span{padding-bottom:5px;border-bottom:1px solid rgba(255,255,255,.75)}
+
+.au-stars{display:inline-flex;align-items:center;gap:3px;color:var(--color-ink)}
+.au-stars__count{margin-left:8px;font:var(--type-body-sm);font-size:var(--text-xs);color:var(--text-muted)}
+
+.au-feature{display:flex;align-items:center;gap:var(--space-4)}
+.au-feature__icon{color:var(--color-ink);flex:0 0 auto}
+.au-feature__title{font:var(--type-label);font-size:var(--text-2xs);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-primary)}
+.au-feature__note{font:var(--type-body-sm);font-size:var(--text-xs);color:var(--text-muted);margin-top:3px}
+
+.au-sechead{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-6);margin-bottom:var(--space-6)}
+.au-sechead__stack{display:flex;flex-direction:column;gap:var(--space-3)}
+.au-sechead__eyebrow{font:var(--type-label);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-secondary)}
+.au-sechead__title{font:var(--type-h2)}
+.au-sechead--center{flex-direction:column;align-items:center;text-align:center}
+.au-sechead__intro{font:var(--type-body);color:var(--text-secondary);max-width:56ch}
+
+.au-feature__title,.au-feature__note{display:block}
